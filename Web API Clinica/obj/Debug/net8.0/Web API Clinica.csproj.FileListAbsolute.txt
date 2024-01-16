@@ -1,0 +1,33 @@
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\bin\Debug\net8.0\appsettings.json
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\bin\Debug\net8.0\Web API Clinica.exe
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\bin\Debug\net8.0\Web API Clinica.deps.json
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\bin\Debug\net8.0\Web API Clinica.runtimeconfig.json
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\bin\Debug\net8.0\Web API Clinica.dll
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\bin\Debug\net8.0\Web API Clinica.pdb
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\Web API Clinica.csproj.AssemblyReference.cache
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\Web API Clinica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\Web API Clinica.AssemblyInfoInputs.cache
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\Web API Clinica.AssemblyInfo.cs
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\Web API Clinica.csproj.CoreCompileInputs.cache
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\Web API Clinica.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\Web API Clinica.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\Web API Clinica.sourcelink.json
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\staticwebassets\msbuild.Web API Clinica.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\staticwebassets\msbuild.build.Web API Clinica.props
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Web API Clinica.props
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Web API Clinica.props
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\scopedcss\bundle\Web API Clinica.styles.css
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\Web API Clinica.csproj.CopyComplete
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\Web API Clinica.dll
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\refint\Web API Clinica.dll
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\Web API Clinica.pdb
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\Web API Clinica.genruntimeconfig.cache
+C:\Users\Alexi\github\Proyectos\Web API Clinica\Web API Clinica\obj\Debug\net8.0\ref\Web API Clinica.dll

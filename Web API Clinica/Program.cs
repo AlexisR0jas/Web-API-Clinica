@@ -16,6 +16,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Especialidades, medicos, pacientes, turnos, obras sociales y facturas
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
