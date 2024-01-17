@@ -20,13 +20,6 @@ namespace Web_API_Clinica.Models
         [ForeignKey("ObraSocialID")]
         public virtual ObraSocial ObraSocial { get; set; }
         public virtual ICollection<Turno> Turno{ get; set; }
-//        Create Table Pacientes(
-//    ID_Paciente bigint primary key identity(1,1) not null,
-//	Apellido varchar(100) not null,
-//	Nombre varchar(100) not null,
-//	FechaNacimiento date not null,
-//	Sexo char (1) check(Sexo in ('M','F'))not null,
-//	ID_ObraSocial bigint foreign key references ObrasSociales(ID_ObraSocial)
-//)
+
     }
 }

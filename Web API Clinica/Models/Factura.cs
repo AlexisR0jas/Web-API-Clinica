@@ -17,7 +17,7 @@ namespace Web_API_Clinica.Models
         public int MedicoID { get; set; }
         [ForeignKey("MedicoID")]
         public virtual Medico Medico { get; set; }
-        [Column(TypeName = "decimal(8,2)")]
+        [Column(TypeName = "decimal(10,2)")]
         public decimal Costo { get; set; }
         public DateTime FechaEmision { get; set; }
 

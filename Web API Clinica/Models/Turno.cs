@@ -16,7 +16,7 @@ namespace Web_API_Clinica.Models
 		public Medico Medico { get; set; }
 		public int PacienteID { get; set; }
 		[ForeignKey("PacienteID")]
-		public virtual Paciente Pacientes { get; set; }
+		public virtual Paciente Paciente { get; set; }
 		public int Duracion { get; set; }
 
 

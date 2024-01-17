@@ -20,7 +20,7 @@ namespace Web_API_Clinica.Models
         public string? Correo { get; set; }
         [Column(TypeName = "decimal(8,2)")]
         public decimal CostoConsulta { get; set; }
-        public Date FechaIngreso { get; set; }
+        public DateTime FechaIngreso { get; set; }
 
         public virtual ICollection<Turno> Turno { get; set; }
 

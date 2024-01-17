@@ -4,9 +4,9 @@ namespace Web_API_Clinica.Models
 {
     public class ClinicaContext:DbContext
     {
-        public ClinicaContext(DbContextOptions<ClinicaContext>options):base(options)
+        public ClinicaContext(DbContextOptions<ClinicaContext> options) : base(options)
         {
-
+            
         }
 
         public DbSet<Especialidad> Especialidades { get; set; }
