@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Web_API_Clinica.Migrations
 {
     /// <inheritdoc />
-    public partial class IniciandoDB : Migration
+    public partial class InitDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -72,6 +72,7 @@ namespace Web_API_Clinica.Migrations
                     Apellido = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FechaNacimiento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Sexo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ObraSocialID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

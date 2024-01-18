@@ -19,7 +19,6 @@ namespace Web_API_Clinica.Models
         public int ObraSocialID { get; set; }
         [ForeignKey("ObraSocialID")]
         public virtual ObraSocial ObraSocial { get; set; }
-        public virtual ICollection<Turno> Turno{ get; set; }
 
     }
 }

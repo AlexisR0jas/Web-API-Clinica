@@ -225,13 +225,13 @@ namespace Web_API_Clinica.Migrations
             modelBuilder.Entity("Web_API_Clinica.Models.Turno", b =>
                 {
                     b.HasOne("Web_API_Clinica.Models.Medico", "Medico")
-                        .WithMany("Turno")
+                        .WithMany()
                         .HasForeignKey("MedicoID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Web_API_Clinica.Models.Paciente", "Paciente")
-                        .WithMany("Turno")
+                        .WithMany()
                         .HasForeignKey("PacienteID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -239,16 +239,6 @@ namespace Web_API_Clinica.Migrations
                     b.Navigation("Medico");
 
                     b.Navigation("Paciente");
-                });
-
-            modelBuilder.Entity("Web_API_Clinica.Models.Medico", b =>
-                {
-                    b.Navigation("Turno");
-                });
-
-            modelBuilder.Entity("Web_API_Clinica.Models.Paciente", b =>
-                {
-                    b.Navigation("Turno");
                 });
 #pragma warning restore 612, 618
         }

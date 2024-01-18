@@ -22,7 +22,6 @@ namespace Web_API_Clinica.Models
         public decimal CostoConsulta { get; set; }
         public DateTime FechaIngreso { get; set; }
 
-        public virtual ICollection<Turno> Turno { get; set; }
 
     }
 }
