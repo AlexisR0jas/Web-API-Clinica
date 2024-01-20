@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "p4bDOIHXZQXQLjG0KWn25aNfwKCpwrbwomSb8ZkdY2omHoQTDKD6NzLiB/ba2xZ+QSO1W0fRRw/EXElBaeqJdA==",
+  "dgSpecHash": "vDuswlLIAAh3d/aSEeJMUtc547XuTuquQEhqZ1SrD43mhBs7+ZEvAnpQXWl5HmQJ0TkmfzyIFg75CTaB6trGRg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alexi\\github\\Proyectos\\Web API Clinica\\Web API Clinica\\Web API Clinica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alexi\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Alexi\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Alexi\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\Alexi\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Alexi\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Alexi\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

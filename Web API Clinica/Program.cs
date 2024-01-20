@@ -1,5 +1,8 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Web_API_Clinica.DTOs.PacientesAcciones;
 using Web_API_Clinica.Models;
+using Web_API_Clinica.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +11,8 @@ builder.Services.AddDbContext<ClinicaContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("ClinicConnection"));
 });
+// Validators
+builder.Services.AddScoped<IValidator<PacienteInsertDto>, PacienteInsertValidator>();
 
 // Add services to the container.
 
