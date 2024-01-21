@@ -12,7 +12,7 @@ namespace Web_API_Clinica.Validators
             RuleFor(x => x.ObraSocialID).NotNull().WithMessage("La obra social es obligatoria");
             RuleFor(x => x.Sexo).NotEmpty().WithMessage("El {PropertyName} debe ser M o F");
             
-        }
+        } 
 
 
     }

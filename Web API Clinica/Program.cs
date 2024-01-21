@@ -1,7 +1,10 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Web_API_Clinica.DTOs;
 using Web_API_Clinica.DTOs.PacientesAcciones;
 using Web_API_Clinica.Models;
+using Web_API_Clinica.Services;
 using Web_API_Clinica.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,8 +18,9 @@ builder.Services.AddDbContext<ClinicaContext>(options =>
 builder.Services.AddScoped<IValidator<PacienteInsertDto>, PacienteInsertValidator>();
 builder.Services.AddScoped<IValidator<PacienteUpdateDto>, PacienteUpdateValidator>(); 
 // Add services to the container.
-
 builder.Services.AddControllers();
+builder.Services.AddKeyedScoped<ICommonService<PacienteDto, PacienteInsertDto, PacienteUpdateDto>, PacienteService>("pacienteService");
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
