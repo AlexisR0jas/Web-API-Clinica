@@ -13,7 +13,7 @@ builder.Services.AddDbContext<ClinicaContext>(options =>
 });
 // Validators
 builder.Services.AddScoped<IValidator<PacienteInsertDto>, PacienteInsertValidator>();
-
+builder.Services.AddScoped<IValidator<PacienteUpdateDto>, PacienteUpdateValidator>(); 
 // Add services to the container.
 
 builder.Services.AddControllers();

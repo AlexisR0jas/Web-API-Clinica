@@ -16,13 +16,17 @@ namespace Web_API_Clinica.Controllers
     {
         private ClinicaContext _context;
         private IValidator<PacienteInsertDto> _pacienteInsertValidator;
+        private IValidator<PacienteUpdateDto> _pacienteUpdateValidator;
 
         public PacienteController(ClinicaContext context,
-            IValidator<PacienteInsertDto> pacienteInsertValidator)
+            IValidator<PacienteInsertDto> pacienteInsertValidator,
+            IValidator<PacienteUpdateDto> pacienteUpdateValidator)
         {
             _context = context;
             _pacienteInsertValidator = pacienteInsertValidator;
+            _pacienteUpdateValidator = pacienteUpdateValidator;
         }
+
         [HttpGet]
         public async Task<IEnumerable<PacienteDto>> Get() =>
            await _context.Pacientes.Select(p => new PacienteDto
@@ -93,6 +97,13 @@ namespace Web_API_Clinica.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult<PacienteDto>>Update(int id, PacienteUpdateDto pacienteUpdateDto)
         {
+            var validationResult = await _pacienteUpdateValidator.ValidateAsync(pacienteUpdateDto);
+            if(!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+
+
             var paciente = await _context.Pacientes.FindAsync(id);
             if(paciente==null)
             {

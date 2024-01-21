@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Web API Clinica")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22852882bb20c69cb04c8fc4ba202f0a3408b702")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d95591d9023bcf8fc7b237afc19785a15f2a3bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Web API Clinica")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Web API Clinica")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
