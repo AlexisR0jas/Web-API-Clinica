@@ -16,7 +16,7 @@ namespace Web_API_Clinica.Controllers
     public class PacienteController : ControllerBase
     {
         private IValidator<PacienteInsertDto> _pacienteInsertValidator;
-        private IValidator<PacienteUpdateDto> _pacienteUpdateValidator;
+        private IValidator<PacienteUpdateDto> _pacienteUpdateValidator; 
         private ICommonService<PacienteDto, PacienteInsertDto, PacienteUpdateDto> _pacienteService;
 
         public PacienteController(
@@ -61,7 +61,7 @@ namespace Web_API_Clinica.Controllers
         {
             var validationResult = await _pacienteUpdateValidator.ValidateAsync(pacienteUpdateDto);
             if(!validationResult.IsValid)
-            {
+            { 
                 return BadRequest(validationResult.Errors);
             }
 

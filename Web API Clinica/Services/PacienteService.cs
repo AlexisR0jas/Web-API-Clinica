@@ -2,19 +2,24 @@
 using Web_API_Clinica.DTOs;
 using Web_API_Clinica.DTOs.PacientesAcciones;
 using Web_API_Clinica.Models;
+using Web_API_Clinica.Repository;
 
 namespace Web_API_Clinica.Services
 {
     public class PacienteService : ICommonService<PacienteDto, PacienteInsertDto, PacienteUpdateDto>
     {
-        private ClinicaContext _context;
-        public PacienteService(ClinicaContext context)
+        private IRepository<Paciente> _pacienteRepository; 
+        public PacienteService(
+            IRepository<Paciente> pacienteRepository)
         {
-            _context = context;
+            _pacienteRepository = pacienteRepository;
         }
 
-        public async Task<IEnumerable<PacienteDto>> Get() =>
-            await _context.Pacientes.Select(p => new PacienteDto
+        public async Task<IEnumerable<PacienteDto>> Get()
+        {
+            var pacientes = await _pacienteRepository.Get();
+
+            return pacientes.Select(p => new PacienteDto()
             {
                 Id = p.PacienteID,
                 Nombre = p.Nombre,
@@ -22,11 +27,12 @@ namespace Web_API_Clinica.Services
                 Sexo = p.Sexo,
                 FechaNacimiento = p.FechaNacimiento,
                 ObraSocialID = p.ObraSocialID
-            }).ToListAsync();
+            });
+        }
 
         public async Task<PacienteDto> GetById(int id)
         {
-            var paciente = await _context.Pacientes.FindAsync(id);
+            var paciente = await _pacienteRepository.GetById(id);
 
             if(paciente!=null)
             {
@@ -57,8 +63,8 @@ namespace Web_API_Clinica.Services
                 ObraSocialID = pacienteInsertDto.ObraSocialID
             };
 
-            await _context.Pacientes.AddAsync(paciente);
-            await _context.SaveChangesAsync();
+            await _pacienteRepository.Add(paciente);
+            await _pacienteRepository.Save(); 
 
             var pacienteDto = new PacienteDto()
             {
@@ -74,7 +80,7 @@ namespace Web_API_Clinica.Services
         }
         public async Task<PacienteDto> Update(int id, PacienteUpdateDto pacienteUpdateDto)
         {
-            var paciente = await _context.Pacientes.FindAsync(id);
+            var paciente = await _pacienteRepository.GetById(id);
 
             if(paciente!=null)
             { 
@@ -84,7 +90,8 @@ namespace Web_API_Clinica.Services
                 paciente.FechaNacimiento = pacienteUpdateDto.FechaNacimiento;
                 paciente.ObraSocialID = pacienteUpdateDto.ObraSocialID;
 
-                await _context.SaveChangesAsync();
+                _pacienteRepository.Update(paciente);
+                await _pacienteRepository.Save();
 
                 var pacienteDto = new PacienteDto()
                 {
@@ -104,7 +111,7 @@ namespace Web_API_Clinica.Services
 
         public async Task<PacienteDto> Delete(int id)
         {
-            var paciente = await _context.Pacientes.FindAsync(id);
+            var paciente = await _pacienteRepository.GetById(id);
 
             if (paciente != null)
             {
@@ -118,8 +125,8 @@ namespace Web_API_Clinica.Services
                     ObraSocialID = paciente.ObraSocialID
                 };
 
-                _context.Remove(paciente);
-                await _context.SaveChangesAsync();
+                _pacienteRepository.Delete(paciente);
+                await _pacienteRepository.Save();
 
                 return pacienteDto;
             }

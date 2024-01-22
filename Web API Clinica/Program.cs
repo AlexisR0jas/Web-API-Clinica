@@ -4,10 +4,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Web_API_Clinica.DTOs;
 using Web_API_Clinica.DTOs.PacientesAcciones;
 using Web_API_Clinica.Models;
+using Web_API_Clinica.Repository;
 using Web_API_Clinica.Services;
 using Web_API_Clinica.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Repository
+builder.Services.AddScoped<IRepository<Paciente>, PacienteRepository>();
 
 // Entity Framework
 builder.Services.AddDbContext<ClinicaContext>(options =>
