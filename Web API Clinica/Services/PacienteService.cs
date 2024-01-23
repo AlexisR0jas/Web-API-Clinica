@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Web_API_Clinica.DTOs;
 using Web_API_Clinica.DTOs.PacientesAcciones;
 using Web_API_Clinica.Models;
@@ -8,26 +9,21 @@ namespace Web_API_Clinica.Services
 {
     public class PacienteService : ICommonService<PacienteDto, PacienteInsertDto, PacienteUpdateDto>
     {
-        private IRepository<Paciente> _pacienteRepository; 
+        private IRepository<Paciente> _pacienteRepository;
+        private IMapper _mapper;
         public PacienteService(
-            IRepository<Paciente> pacienteRepository)
+            IRepository<Paciente> pacienteRepository,
+            IMapper mapper)
         {
             _pacienteRepository = pacienteRepository;
+            _mapper = mapper;
         }
 
         public async Task<IEnumerable<PacienteDto>> Get()
         {
             var pacientes = await _pacienteRepository.Get();
 
-            return pacientes.Select(p => new PacienteDto()
-            {
-                Id = p.PacienteID,
-                Nombre = p.Nombre,
-                Apellido = p.Apellido,
-                Sexo = p.Sexo,
-                FechaNacimiento = p.FechaNacimiento,
-                ObraSocialID = p.ObraSocialID
-            });
+            return pacientes.Select(p => _mapper.Map<PacienteDto>(p));
         }
 
         public async Task<PacienteDto> GetById(int id)
@@ -36,15 +32,7 @@ namespace Web_API_Clinica.Services
 
             if(paciente!=null)
             {
-                var pacienteDto = new PacienteDto
-                {
-                    Id = paciente.PacienteID,
-                    Nombre = paciente.Nombre,
-                    Apellido = paciente.Apellido,
-                    Sexo = paciente.Sexo,
-                    FechaNacimiento = paciente.FechaNacimiento,
-                    ObraSocialID = paciente.ObraSocialID
-                };
+                var pacienteDto = _mapper.Map<PacienteDto>(paciente);
 
                 return pacienteDto;
             }
@@ -54,27 +42,12 @@ namespace Web_API_Clinica.Services
 
         public async Task<PacienteDto> Add(PacienteInsertDto pacienteInsertDto)
         {
-            var paciente = new Paciente()
-            {
-                Nombre = pacienteInsertDto.Nombre,
-                Apellido = pacienteInsertDto.Apellido,
-                Sexo = pacienteInsertDto.Sexo,
-                FechaNacimiento = pacienteInsertDto.FechaNacimiento,
-                ObraSocialID = pacienteInsertDto.ObraSocialID
-            };
+            var paciente = _mapper.Map<Paciente>(pacienteInsertDto);
 
             await _pacienteRepository.Add(paciente);
-            await _pacienteRepository.Save(); 
+            await _pacienteRepository.Save();
 
-            var pacienteDto = new PacienteDto()
-            {
-                Id = paciente.PacienteID,
-                Nombre = pacienteInsertDto.Nombre,
-                Apellido = pacienteInsertDto.Apellido,
-                Sexo = pacienteInsertDto.Sexo,
-                FechaNacimiento = pacienteInsertDto.FechaNacimiento,
-                ObraSocialID = pacienteInsertDto.ObraSocialID
-            };
+            var pacienteDto = _mapper.Map<PacienteDto>(paciente);
 
             return pacienteDto;
         }
@@ -83,25 +56,13 @@ namespace Web_API_Clinica.Services
             var paciente = await _pacienteRepository.GetById(id);
 
             if(paciente!=null)
-            { 
-                paciente.Nombre = pacienteUpdateDto.Nombre;
-                paciente.Apellido = pacienteUpdateDto.Apellido;
-                paciente.Sexo = pacienteUpdateDto.Sexo;
-                paciente.FechaNacimiento = pacienteUpdateDto.FechaNacimiento;
-                paciente.ObraSocialID = pacienteUpdateDto.ObraSocialID;
+            {
+                paciente = _mapper.Map<PacienteUpdateDto, Paciente>(pacienteUpdateDto, paciente);
 
                 _pacienteRepository.Update(paciente);
                 await _pacienteRepository.Save();
 
-                var pacienteDto = new PacienteDto()
-                {
-                    Id = paciente.PacienteID,
-                    Nombre = paciente.Nombre,
-                    Apellido = paciente.Apellido,
-                    Sexo = paciente.Sexo,
-                    FechaNacimiento = paciente.FechaNacimiento,
-                    ObraSocialID = paciente.ObraSocialID
-                };
+                var pacienteDto = _mapper.Map<PacienteDto>(paciente);
 
                 return pacienteDto;
             }
@@ -115,15 +76,7 @@ namespace Web_API_Clinica.Services
 
             if (paciente != null)
             {
-                var pacienteDto = new PacienteDto()
-                {
-                    Id = paciente.PacienteID,
-                    Nombre = paciente.Nombre,
-                    Apellido = paciente.Apellido,
-                    Sexo = paciente.Sexo,
-                    FechaNacimiento = paciente.FechaNacimiento,
-                    ObraSocialID = paciente.ObraSocialID
-                };
+                var pacienteDto = _mapper.Map<PacienteDto>(paciente);
 
                 _pacienteRepository.Delete(paciente);
                 await _pacienteRepository.Save();

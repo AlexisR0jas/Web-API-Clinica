@@ -1,6 +1,7 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Web_API_Clinica.Automappers;
 using Web_API_Clinica.DTOs;
 using Web_API_Clinica.DTOs.PacientesAcciones;
 using Web_API_Clinica.Models;
@@ -20,7 +21,10 @@ builder.Services.AddDbContext<ClinicaContext>(options =>
 });
 // Validators
 builder.Services.AddScoped<IValidator<PacienteInsertDto>, PacienteInsertValidator>();
-builder.Services.AddScoped<IValidator<PacienteUpdateDto>, PacienteUpdateValidator>(); 
+builder.Services.AddScoped<IValidator<PacienteUpdateDto>, PacienteUpdateValidator>();
+
+// Mappers
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddKeyedScoped<ICommonService<PacienteDto, PacienteInsertDto, PacienteUpdateDto>, PacienteService>("pacienteService");
