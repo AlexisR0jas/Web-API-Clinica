@@ -5,10 +5,10 @@ using Web_API_Clinica.Models;
 
 namespace Web_API_Clinica.Automappers
 {
-    public class MappingProfile : Profile
+    public class MappingPaciente : Profile
     { 
 
-        public MappingProfile()
+        public MappingPaciente()
         {
             CreateMap<PacienteInsertDto, Paciente>();
             CreateMap<Paciente, PacienteDto>()

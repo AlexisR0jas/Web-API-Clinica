@@ -17,12 +17,12 @@ namespace Web_API_Clinica.Controllers
     {
         private IValidator<PacienteInsertDto> _pacienteInsertValidator;
         private IValidator<PacienteUpdateDto> _pacienteUpdateValidator; 
-        private ICommonService<PacienteDto, PacienteInsertDto, PacienteUpdateDto> _pacienteService;
+        private ICommonServicePaciente<PacienteDto, PacienteInsertDto, PacienteUpdateDto> _pacienteService;
 
         public PacienteController(
             IValidator<PacienteInsertDto> pacienteInsertValidator,
             IValidator<PacienteUpdateDto> pacienteUpdateValidator,
-            [FromKeyedServices("pacienteService")]ICommonService<PacienteDto, PacienteInsertDto, PacienteUpdateDto> pacienteService)
+            [FromKeyedServices("pacienteService")]ICommonServicePaciente<PacienteDto, PacienteInsertDto, PacienteUpdateDto> pacienteService)
         {
             _pacienteInsertValidator = pacienteInsertValidator;
             _pacienteUpdateValidator = pacienteUpdateValidator;

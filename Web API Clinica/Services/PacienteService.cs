@@ -7,7 +7,7 @@ using Web_API_Clinica.Repository;
 
 namespace Web_API_Clinica.Services
 {
-    public class PacienteService : ICommonService<PacienteDto, PacienteInsertDto, PacienteUpdateDto>
+    public class PacienteService : ICommonServicePaciente<PacienteDto, PacienteInsertDto, PacienteUpdateDto>
     {
         private IRepository<Paciente> _pacienteRepository;
         private IMapper _mapper;

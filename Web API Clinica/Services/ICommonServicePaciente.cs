@@ -4,7 +4,7 @@ using Web_API_Clinica.Models;
 
 namespace Web_API_Clinica.Services
 {
-    public interface ICommonService<T, TI, TU>
+    public interface ICommonServicePaciente<T, TI, TU>
     {
         Task<IEnumerable<T>> Get();
         Task<T> GetById(int id);
